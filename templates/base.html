@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>
+    {% block title %}
+    AniZona
+    {% endblock %}
+  </title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+  <div class="background">
+
+    <header>
+      <div class="container header-flex">
+        <hgroup class="title-wrapper">
+          <h1 class="title">AniZona</h1>
+          <h2 class="subtitle">всё об аниме</h2>
+        </hgroup>
+        <nav class="navbar">
+          <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">Все аниме</a></li>
+            <li><a href="#">Разработка</a></li>
+            <li><a href="#">Разработка</a></li>
+            <li><a href="#">Разработка</a></li>
+          </ul>
+        </nav>
+        <section class="search">
+          <form class="search__form">
+            <h2 class="search__form-head">Поиск</h2>
+            <label class="search__form-block">
+              <input type="text" class="search__form-input" id="searchText" placeholder="Введите название...">
+            </label>
+          </form>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section class="tv-shows">
+        <h3 class="tv-shows__head">Результат поиска</h3>
+        <ul class="tv-shows__list">
+          <li class="tv-shows__item">
+            {% block content %}
+            Content about anime for you
+            {% endblock %}
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</body>
+
+</html>

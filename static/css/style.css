@@ -146,6 +146,11 @@ body {
   padding: 20px 150px;
 }
 
+.content section ul li {
+  display: flex;
+  flex-flow: column wrap;
+}
+
 .title-wrapper h1 {
   font-family: 'Balsamiq Sans', cursive;
   font-size: 3em;

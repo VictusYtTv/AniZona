@@ -24,7 +24,7 @@
         <nav class="navbar">
           <ul>
             <li><a href="#">Главная</a></li>
-            <li><a href="#">Все аниме</a></li>
+            <li><a href="{% url 'card_page_url' %}">Все аниме</a></li>
             <li><a href="#">Разработка</a></li>
             <li><a href="#">Разработка</a></li>
             <li><a href="#">Разработка</a></li>
@@ -41,9 +41,8 @@
       </div>
     </header>
 
-    <div class="container">
+    <div class="content">
       <section class="tv-shows">
-        <h3 class="tv-shows__head">Результат поиска</h3>
         <ul class="tv-shows__list">
           <li class="tv-shows__item">
             {% block content %}

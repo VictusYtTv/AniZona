@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {{ Janre.title }} - {{ block.super }}
+{% endblock%}
+
+{% block content %}
+  <h1>Cards with "{{ janre.title|title }}" janre: </h1>
+
+  {% for janre in janre.card.all %}
+    {% include 'cards/includes/card_template.html' %}
+  {% endfor %}
+
+{% endblock %}

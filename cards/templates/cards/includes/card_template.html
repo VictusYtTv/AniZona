@@ -1,0 +1,20 @@
+<li class="tv-shows__item">
+  <a href="{{ card.get_absolute_url }}" class="tv-card">
+    <span class="tv-card__vote">{{ card.rating }}</span>
+  {% if card.photo %} 
+  <img 
+    class="tv-card__img" 
+    src="{{ card.photo.url }}"
+    alt="Photo" 
+    enctype=multipart/form-data
+  /> 
+  {% else %}
+    <img
+    src="https://ilgeniodellostreaming.tw/wp-content/uploads/2017/02/eO6KOCaDaz03LsF2L1lYx1xMMMG-185x278.jpg"
+    alt="Photo" 
+    enctype=multipart/form-data 
+    /> 
+  {% endif %}
+    <h4 class="tv-card__head">{{ card.header }}</h4>
+  </a>
+</li>

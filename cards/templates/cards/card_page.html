@@ -1,27 +1,16 @@
-{% extends 'cards/base_blog.html' %}
+{% extends 'base.html' %}
 
 {% block title %}
-  AniZon
+  AniZona
 {% endblock %}
 
 {% block content %}
-  {% for card in cards %}
-    <a href="{{ card.get_absolute_url }}" class="tv-card">
-      <span class="tv-card__vote">{{ card.rating }}</span>
-      {% if card.photo %}
-        <img class="tv-card__img" src="{{ card.photo.url }}"
-        alt="Photo"
-        enctype=multipart/form-data
-        width="150"
-        height="278">
-      {% else %}
-        <img src="https://ilgeniodellostreaming.tw/wp-content/uploads/2017/02/eO6KOCaDaz03LsF2L1lYx1xMMMG-185x278.jpg" 
-        alt="Photo"
-        enctype=multipart/form-data
-        width="150"
-        height="278">
-      {% endif %}
-      <h4 class="tv-card__head">{{ card.header }}</h4>
-    </a>
-  {% endfor %}
+<section class="tv-shows">
+  <h3 class="tv-shows__head">Результат поиска</h3>
+    <ul class="tv-shows__list">
+      {% for card in cards %}
+        {% include 'cards/includes/card_template.html' %}
+      {% endfor %}
+    </ul>
+</section>
 {% endblock %}

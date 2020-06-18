@@ -1,202 +1,248 @@
-/* --------------- reset.css --------------- */
-html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, u, i,  dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;                               /* обнуляем отступы и убираем бордюры */
-	vertical-align: baseline;          /* приводим все к одной базовой линии */
-	background: transparent;      /* чтобы не проскакивали левые фоны, установленные по умолчанию */
-	font-size: 100%;                     /* размер шрифта всем одинаковый */
-}
-a {                                      	     /* ссылка не в общем списке чтобы не сбрасывать outline по умолчанию */
-	margin:0;
-	padding:0;
-	font-size:100%;
-	vertical-align:baseline;
-	background:transparent;
-	outline:none;
-}
-table {						/* устраняем отступы между ячейками таблицы */
-	border-collapse: collapse; 
-	border-spacing: 0;
-}
-td, td img {
-	vertical-align: top;			/* возвращаем привычное вертикальное выравнивание */
-} 
-input, select, button, textarea {
-	margin: 0; 				/* убираем отступы по умолчанию для элементов форм (в частности для checkbox и radio) */
-	font-size: 100%; 			/* делаем размер шрифтов везде одинаковым */
-	outline: none;
-}
-input[type="text"], input[type="password"], textarea {
-	padding: 0; 				/* убираем внутренние отступы для текстовых полей */
-}
-input[type="checkbox"] { 		/* вертикальное выравнивание чекбоксов и радиобатонов относительно меток */
-	vertical-align: bottom;
-}
-input[type="radio"] {
-	vertical-align: text-bottom;
-}
-sub {
-	vertical-align: sub;
-	font-size: smaller;
-}
-sup {
-	vertical-align: super;
-	font-size: smaller;
-}
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-	display:block;
-}
-nav ul {
-	 list-style:none;
-}
-/* --------------- /reset.css --------------- */
 
-/* --------------- базовые настройки ---------*/
+main {
+  margin-top: 60px;
+}
+
+/* Reset-css */
+
 html {
-	min-height:100%; /* всегда показываем вертикальную полосу прокрутки  */
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
-body {
-	color: #000;
-	text-align: left;
-	font-size: 1em; /* используем безопасные шрифтовые CSS стеки */
-  min-height:100%;
-  font-family: 'Balsamiq Sans', cursive;
-}
-a, a:visited { /* порядок правил для ссылок имеет значение */
-	color: black;
-	text-decoration: none;
-}
-a:hover {
-	color: #5d5356;
-	text-decoration: none;
-}
-a:focus, a:active {
-	color: #c83867;
-	text-decoration: underline;
-}
-h1, h2, h3, h4, h5, h6{
-  font-weight:normal;
-  font-family: 'Balsamiq Sans', cursive;
-}
-img{
 
-	max-width:100%;
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
 }
-.clr{
-	clear:both;
-}
-.clearfix:after {
-    clear: both;
-    content: "";
-    display: table;
-}
-/* --------------- /базовые настройки ---------*/
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
   margin: 0;
-  background-image: url(https://static.wallpapers-anime.com/upload/20170609/733/J/c/U/JcUGEF.jpg);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* background-color: rgb(255, 255, 255); */
-  font-family: Museo Sans, Arial, sans-serif;
+
+  background-color: rgb(255, 255, 255);
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 16px;
   color: black;
 }
 
-.background {
-  margin: auto 200px;
-  padding: auto 20px;
-  background-color: whitesmoke;
-  border-left: 3px solid black;
-  border-right: 3px solid black;
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-.navbar {
-  margin-bottom: 20px;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.navbar ul {
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+/* HEADER */
+
+.header {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
   align-items: center;
-}
-
-.navbar ul li {
-  display: flex;
-  margin-right: 1px;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 50px;
-  border-bottom: 1.5px solid #ccc;
-  border-radius: 7px;
-}
-
-.container {
-  display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  margin: 0 auto;
-  padding: 20px 150px;
+  height: 104px;
+  padding-left: 34px;
+  border-bottom: 1px solid #D4D4D4;
 }
 
-.content section ul li {
-  display: flex;
-  flex-flow: column wrap;
-}
-
-.title-wrapper h1 {
-  font-family: 'Balsamiq Sans', cursive;
-  font-size: 3em;
+.logo-img {
+  color: #5671f6;
   font-weight: 700;
-  border-bottom: 2px solid gray;
+  font-size: 30px;
 }
 
-.title-wrapper h2 {
-  font-family: 'Balsamiq Sans', cursive;
-  font-size: 1.5em;
-  text-align: center;
-  text-transform: uppercase;
-  margin-top: 2px;
+.line {
+  height: 100%;
+  width: 1px;
+  background-color: #d4d4d4;
+  margin-left: 34px;
 }
 
-.search {
+.search-input {
+  background-image: url(../images/search-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center left;
+  padding-left: 38px;
+  border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #a5a5a5;
+  margin-left: 34px;
+}
+
+.navigation {
+  margin: 0 44px 0 auto;
+}
+.navigation-link {
+  text-decoration: none;
+  font-style: 18px;
+  line-height: 21px;
+  color: #363636;
+  margin-right: 18px;
+}
+
+.button-group {
+  height: 100%;
+}
+
+.button {
+  height: 100%;
+}
+
+.sign-up {
+  color: #5671f6;
+  font-size: 18px;
+  border: none;
+  background-color: #fff;
+  padding: 0 34px;
+  border-left: 1px solid #D4D4D4;
+
+}
+
+.login {
+  color: #fff;
+  font-size: 18px;
+  line-height: 21px;
+  background-color: #5671f6;
+  border: none;
+  height: 100%;
+  padding: 0 50px;
+  cursor: pointer;
+}
+
+/* CONTENT_DETAIL_CARDS */
+
+.content_detail_show {
   display: flex;
-  margin-left: 50px;
-  padding-bottom: 5px;
-}
-.search__form {
-  padding-top: 15px;
-  width: 200px;
+  flex-direction: column;
+  width: 70%;
+  margin: 30px auto;
 }
 
-.search__form-block {
+.detail-photo {
   display: block;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  border-bottom: 2px solid #ccc;
+  box-shadow: 3px 3px 20px 1px rgba(200, 200, 200, .75);
+}
+.detail-show {
+  display: flex;
+  flex-direction: row;
 }
 
-.search__form-head {
-  font-size: 20px;
-  font-weight: 700;
+.detail_text {
+  margin-left: 10px;
+  line-height: 21px;
 }
 
-.search__form-input {
-  width: 100%;
+.detail_text h1 {
+  margin: 0 0 20px 0px;
+}
+
+.detail_body {
+  margin-top: 20px;
+}
+
+.detail_body p {
+  font-weight: 300;
+  border-top: 1px solid black;
   padding-top: 10px;
-  border-style: none;
-  outline: none;
-  background-color: transparent;
+  text-align: justify;
+}
+/* CONTENT_CARDS */
+
+.tv-shows {
+  width: 70%;
+  margin: 0 auto;
 }
 
-.search__form-input:focus {
-  padding-top: 5px;
-  border-top: 2px solid #ccc;
+.tv-shows__head {
+  margin: 15px 0;
+}
+
+.tv-shows__list {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 185px);
+  grid-gap: 1rem;
+  justify-content: space-between;
+}
+
+
+.tv-shows__item {
+  min-width: 185px;
+  margin: 15px 10px 30px;
+}
+
+
+.tv-card {
+  position: relative;
+  max-width: 185px;
+  min-height: 370px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 3px 20px 1px rgba(200, 200, 200, .75);
+}
+
+.tv-card__head {
+  padding: 15px 15px 0;
+  max-height: 80px;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 900;
+}
+
+
+.tv-card__vote {
+  position: absolute;
+  top: 18px;
+  left: 0px;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #FF637D;
+  height: 25px;
+  width: 44px;
+  display: inline-block;
+  line-height: 25px;
+  font-weight: 900;
+}
+
+.tv-card__img {
+  height: 278px;
+  width: 185px;
+}
+
+/* ABOUT */
+
+.content_about {
+  width: 70%;
+  margin: 30px auto;
+}
+
+.about_header {
+  font-weight: 900;
+  font-size: 40px;
 }

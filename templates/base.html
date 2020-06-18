@@ -4,55 +4,45 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
     {% block title %}
-    AniZona
+      AniZona
     {% endblock %}
   </title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <script src="js/script.js"></script>
+  <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
 </head>
 
 <body>
-  <div class="background">
-
-    <header>
-      <div class="container header-flex">
-        <hgroup class="title-wrapper">
-          <h1 class="title">AniZona</h1>
-          <h2 class="subtitle">всё об аниме</h2>
-        </hgroup>
-        <nav class="navbar">
-          <ul>
-            <li><a href="#">Главная</a></li>
-            <li><a href="{% url 'card_page_url' %}">Все аниме</a></li>
-            <li><a href="#">Разработка</a></li>
-            <li><a href="#">Разработка</a></li>
-            <li><a href="#">Разработка</a></li>
-          </ul>
-        </nav>
-        <section class="search">
-          <form class="search__form">
-            <h2 class="search__form-head">Поиск</h2>
-            <label class="search__form-block">
-              <input type="text" class="search__form-input" id="searchText" placeholder="Введите название...">
-            </label>
-          </form>
-        </section>
-      </div>
-    </header>
-
-    <div class="content">
-      <section class="tv-shows">
-        <ul class="tv-shows__list">
-          <li class="tv-shows__item">
-            {% block content %}
-            Content about anime for you
-            {% endblock %}
-          </li>
-        </ul>
-      </section>
+  <header class="header">
+    <a href="{% url 'card_page_url' %}"><span class="logo-img">AniZona</span></a>
+    <div class="line"></div>
+    <div class="logo">
+      <input type="text" class="search-input" placeholder="Поиск по аниме..." />
     </div>
-  </div>
+    <nav class="navigation">
+      <a href="#" class="navigation-link">Главная</a>
+      <a href="{% url 'card_page_url' %}" class="navigation-link">Все аниме</a>
+      <a href="#" class="navigation-link">Новости</a>
+      <a href="#" class="navigation-link">Поиск по жанру</a>
+      <a href="{% url 'about_url' %}" class="navigation-link">О сервисе</a>
+    </nav>
+    <div class="button-group">
+      <button class="button sign-up">Регистрация</button>
+      <button class="button login">Войти</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      {% block content %}
+        Any content is here!
+      {% endblock %}
+    </div>
+  </main>
 </body>
 
 </html>

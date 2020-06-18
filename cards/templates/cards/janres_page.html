@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Janres page - {{ blocks.super }}
+{% endblock %}
+
+
+{% block content %}
+  <h3>Tags:</h3>
+
+  {% for janre in janres %}
+    <h3><a href="{{ janre.get_absolute_url }}">{{ janre.title }}</a></h3>
+  {% endfor %}
+{% endblock %}

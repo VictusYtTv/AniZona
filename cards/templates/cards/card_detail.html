@@ -1,10 +1,42 @@
-{% extends 'cards/base_blog.html' %}
+{% extends 'base.html' %}
 
 {% block title %}
   {{ card.title }} - {{ block.super }}
 {% endblock %}
 
 {% block content %}
-  <h1>{{ card.header }}</h1>
-  <p>{{ card.body }}</p>
+  <div class="content_detail_show">
+    <div class="detail-show">
+      <div class="detail_photo">
+        {% if card.photo %} 
+        <img 
+          class="tv-card__img" 
+          src="{{ card.photo.url }}"
+          alt="Photo" 
+          enctype=multipart/form-data
+        /> 
+        {% else %}
+          <img
+          src="https://ilgeniodellostreaming.tw/wp-content/uploads/2017/02/eO6KOCaDaz03LsF2L1lYx1xMMMG-185x278.jpg"
+          alt="Photo" 
+          enctype=multipart/form-data 
+          /> 
+        {% endif %}
+      </div>
+      <div class="detail_text">
+        <h1>{{ card.header }}</h1>
+        <ul>
+          <li><strong>Официальное название:</strong> {{ card.title }}</li>
+          <li><strong>Год выпуска:</strong> {{ card.date_published|date:"Y" }} г.</li>
+          <li>
+          <strong>Жанры:</strong> {{ card.janre }}
+          </li>
+          <li><strong>Рейтинг:</strong> {{ card.rating }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="detail_body">
+      <p><strong>Описание:</strong> {{ card.body }}</p>
+    </div>
+  </div>
 {% endblock %}
